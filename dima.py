@@ -1,16 +1,18 @@
-from datetime import date 
- 
-class Medicine: 
-    def __init__(self, name, price, quantity, prescription_needed, expiration_date): 
-        self.name = name 
-        self.price = price 
-        self.quantity = quantity 
-        self.prescription_needed = prescription_needed 
-        self.expiration_date = expiration_date 
- 
-    def __str__(self): 
-        return f"{self.name} - Price: {self.price}, Quantity: {self.quantity}, Prescription Needed: {self.prescription_needed}, Expiration Date: {self.expiration_date}" 
- 
+from datetime import date
+
+class Medicine:
+    def __init__(self, name, price, quantity, prescription_needed, expiration_date):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        self.prescription_needed = prescription_needed
+        self.expiration_date = expiration_date
+
+    def __str__(self):
+        prescription_status = "Prescription Required" if self.prescription_needed else "No Prescription Needed"
+        return f"{self.name} - Price: {self.price}, Quantity: {self.quantity}, Prescription: {prescription_status}, Expiration Date: {self.expiration_date}"
+
+
 class Pharmacy: 
     def __init__(self): 
         self.medicines = [] 
